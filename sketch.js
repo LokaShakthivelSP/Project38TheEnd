@@ -32,8 +32,9 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(600, 200);
-  
+  canvas=createCanvas(600, 200);
+  canvas.mouseClicked(fxn);
+
   trex = createSprite(50,180,20,50);
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided",trex_collided);
@@ -111,6 +112,13 @@ function draw() {
     }
   }
   drawSprites();
+}
+
+function fxn(){
+  if(trex.y>=161 && gameState=== PLAY) {
+    trex.velocityY = -13;
+  }
+
 }
 
 function spawnClouds() {
