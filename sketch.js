@@ -66,6 +66,7 @@ function setup() {
 
 function draw() {
   background("white");
+  textSize(20)
   text("Score: "+ score, 500,50);
   
   if(gameState === PLAY){
@@ -118,7 +119,9 @@ function fxn(){
   if(trex.y>=161 && gameState=== PLAY) {
     trex.velocityY = -13;
   }
-
+  if(gameState===END){
+    reset();
+  }
 }
 
 function spawnClouds() {
